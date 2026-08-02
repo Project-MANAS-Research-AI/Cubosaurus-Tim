@@ -2,8 +2,8 @@ import numpy as np
 import torch
 import pytest
 
-from nerf_scan.camera import pose_spherical, get_rays
-from nerf_scan.display import (
+from cubosaurus_tim.camera import pose_spherical, get_rays
+from cubosaurus_tim.display import (
     compose_rgb,
     to_uint8_bgr,
     normalize_depth_inverted,
@@ -11,7 +11,7 @@ from nerf_scan.display import (
     depth_tensor_to_inferno_image,
     build_display_frame,
 )
-from nerf_scan.rendering import (
+from cubosaurus_tim.rendering import (
     stratified_sample_t_vals,
     sample_points_along_rays,
     compute_deltas,
@@ -190,7 +190,7 @@ def test_composite_hand_verified():
 
 
 def test_ray_box_intersect_hits_head_on():
-    from nerf_scan.scene import ray_box_intersect
+    from cubosaurus_tim.scene import ray_box_intersect
     rays_o = torch.tensor([[0.0, 0.0, 3.0]])
     rays_d = torch.tensor([[0.0, 0.0, -1.0]])
     box_min = torch.tensor([-1.0, -1.0, -1.0])

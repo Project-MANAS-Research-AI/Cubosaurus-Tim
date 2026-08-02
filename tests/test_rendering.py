@@ -1,7 +1,7 @@
 import torch
 import pytest
 
-from nerf_scan.rendering import (
+from cubosaurus_tim.rendering import (
     stratified_sample_t_vals,
     sample_points_along_rays,
     compute_deltas,

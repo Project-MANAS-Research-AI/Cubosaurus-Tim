@@ -1,7 +1,7 @@
 import torch
 import pytest
 
-from nerf_scan.scene import ray_box_intersect, synthetic_cube_target, GREEN
+from cubosaurus_tim.scene import ray_box_intersect, synthetic_cube_target, GREEN
 
 
 def test_ray_box_intersect_hits_head_on():

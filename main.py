@@ -1,5 +1,5 @@
 """
-NeRF CT-Scan Engine
+Cubosaurus-Tim Engine
 ====================
 A single-file-turned-modular, from-scratch Neural Radiance Field (NeRF)
 demo that trains live in a window, rendering two synchronized views of the
@@ -15,7 +15,7 @@ Controls:
     q / Esc  -> quit
 """
 
-from nerf_scan.engine import run
+from cubosaurus_tim.engine import run
 
 if __name__ == "__main__":
     run()

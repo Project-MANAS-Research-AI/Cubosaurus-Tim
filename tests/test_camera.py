@@ -1,7 +1,7 @@
 import torch
 import pytest
 
-from nerf_scan.camera import pose_spherical, get_rays
+from cubosaurus_tim.camera import pose_spherical, get_rays
 
 
 def test_pose_spherical_front_on_axis():

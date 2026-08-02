@@ -9,8 +9,6 @@ Dino Tim was just a plastic T-Rex and the desk's lead debugging mascot, but toni
 
 "His chaotic energy broke the system," Jasmine observed. "It compressed his essence into a hyper-cube."
 
-"If we stop looking at it, the geometry might collapse," Sparsh warned.
-
 To contain the anomaly, Jasmine rigged a virtual camera to endlessly orbit the object on its Y-axis. The monitor instantly split in two. On the left, the glowing green cube spun flawlessly in 3D space. On the right, a blazing, inferno-colored depth map tracked its exact hidden structure. 
 
 Then something shifted. The cube's edges softened, refusing to sharpen no matter how long they trained. A faint ghost of the cube flickered behind the solid one, as if Tim's spirit was trying to escape. The depth map erupted into noisy static wherever the cube wasn't, and stray green pixels bled into places they didn't belong, like the cube was seeing things behind its own back.
@@ -43,7 +41,7 @@ uv run main.py
 Press `q` or `Esc` in the window to quit.
 
 ## Project Structure
-The core logic lives inside the `src/nerf_scan/` directory. You will find:
+The core logic lives inside the `src/cubosaurus_tim/` directory. You will find:
 - **`engine.py`**: The main entry point tying the training loop and UI together.
 - **`model.py`**, **`encoding.py`**, **`rendering.py`**: The Neural Radiance Field math, the Fourier-features, and the volume rendering integral.
 - **`camera.py`**, **`scene.py`**, **`display.py`**: The virtual camera logic, the synthetic scene generation, and the live OpenCV UI.
@@ -53,7 +51,7 @@ The core logic lives inside the `src/nerf_scan/` directory. You will find:
 
 ## 🐛 The Bug Hunt Challenge
 
-This repo runs as an ongoing bug-hunt challenge. A maintainer occasionally introduces a real, working bug into `src/nerf_scan/` and opens a GitHub Issue describing the *symptom* (not the cause). Your job is to track down the cause and fix it.
+This repo runs as an ongoing bug-hunt challenge. A maintainer occasionally introduces a real, working bug into `src/cubosaurus_tim/` and opens a GitHub Issue describing the *symptom* (not the cause). Your job is to track down the cause and fix it.
 
 ### How to participate:
 1. **Pick an open issue** from the Issues tab. 

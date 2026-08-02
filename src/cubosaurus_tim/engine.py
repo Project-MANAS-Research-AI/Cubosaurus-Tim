@@ -15,15 +15,15 @@ from .rendering import render_rays
 from .scene import synthetic_cube_target
 from .display import build_display_frame
 
-WINDOW_NAME = "NeRF-Scan  |  3D Render + CT Depth  |  press q to quit"
+WINDOW_NAME = "Cubosaurus-Tim  |  3D Render + CT Depth  |  press q to quit"
 
 
 def run():
     torch.manual_seed(0)
     device = get_device()
 
-    print(f"[NeRF-Scan] device = {device}")
-    print("[NeRF-Scan] press 'q' or Esc in the window to quit")
+    print(f"[Cubosaurus-Tim] device = {device}")
+    print("[Cubosaurus-Tim] press 'q' or Esc in the window to quit")
 
     encoder = PositionalEncoder(input_dims=3, num_freqs=6, include_input=True).to(device)
     model = TinyNeRFModel(pos_enc_dim=encoder.out_dim, hidden=128).to(device)
@@ -68,5 +68,5 @@ def run():
     finally:
         elapsed = time.time() - t0
         fps = step / elapsed if elapsed > 0 else 0.0
-        print(f"[NeRF-Scan] stopped after {step} steps ({fps:.1f} it/s)")
+        print(f"[Cubosaurus-Tim] stopped after {step} steps ({fps:.1f} it/s)")
         cv2.destroyAllWindows()

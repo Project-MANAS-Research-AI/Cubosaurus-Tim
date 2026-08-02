@@ -1,5 +1,5 @@
 [project]
-name = "nerf-scan"
+name = "cubosaurus-tim"
 version = "0.1.0"
 description = "A from-scratch NeRF that trains live, rendering RGB + false-color CT-style depth"
 readme = "README.md"
@@ -16,14 +16,14 @@ dev = [
 ]
 
 [project.scripts]
-nerf-scan = "nerf_scan.engine:run"
+cubosaurus-tim = "cubosaurus_tim.engine:run"
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/nerf_scan"]
+packages = ["src/cubosaurus_tim"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -2,7 +2,7 @@ import numpy as np
 import torch
 import pytest
 
-from nerf_scan.display import (
+from cubosaurus_tim.display import (
     compose_rgb,
     to_uint8_bgr,
     compute_depth_vis,
