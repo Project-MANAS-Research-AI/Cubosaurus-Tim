@@ -15,5 +15,5 @@ class PositionalEncoder(nn.Module):
         outs = [x] if self.include_input else []
         for freq in self.freq_bands:
             outs.append(torch.sin(x * freq))
-            outs.append(torch.cos(x * freq))
+            outs.append(torch.cos(x + freq))
         return torch.cat(outs, dim=-1)
