@@ -1,0 +1,44 @@
+name: PR Compliance Check
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+    branches: ["main"]
+
+jobs:
+  compliance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check for forbidden file changes
+        run: |
+          FORBIDDEN_CHANGED=0
+          # Get list of changed files between the base branch and the PR branch
+          git diff --name-only origin/${{ github.base_ref }}...${{ github.sha }} > changed_files.txt
+          
+          while read file; do
+            if [[ "$file" == tests/* ]] || [[ "$file" == .github/* ]] || [[ "$file" == "pyproject.toml" ]] || [[ "$file" == "uv.lock" ]] || [[ "$file" == ".gitignore" ]]; then
+              echo "::error file=$file::Forbidden file changed: $file. You must not modify the tests, CI, or dependency configs."
+              FORBIDDEN_CHANGED=1
+            fi
+          done < changed_files.txt
+          
+          if [ $FORBIDDEN_CHANGED -eq 1 ]; then
+            echo "PR rejected: One or more forbidden files were modified."
+            exit 1
+          fi
+
+      - name: Check for Issue Reference in Description
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          if echo "$PR_BODY" | grep -iqE "#[0-9]+"; then
+            echo "Issue reference found in description."
+          else
+            echo "::error::PR description must reference the issue number (e.g., '#12')."
+            exit 1
+          fi
