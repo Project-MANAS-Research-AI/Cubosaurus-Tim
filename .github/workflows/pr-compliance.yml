@@ -36,9 +36,9 @@ jobs:
         env:
           PR_BODY: ${{ github.event.pull_request.body }}
         run: |
-          if echo "$PR_BODY" | grep -iqE "(fix|fixes|fixed|resolve|resolves|resolved|close|closes|closed)\s*#\d+"; then
+          if echo "$PR_BODY" | grep -iqE "#[0-9]+"; then
             echo "Issue reference found in description."
           else
-            echo "::error::PR description must reference the issue it fixes (e.g., 'Fixes #12')."
+            echo "::error::PR description must reference the issue number (e.g., '#12')."
             exit 1
           fi

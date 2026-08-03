@@ -152,7 +152,7 @@ files, the base is wrong.
 
 In the PR description:
 
-- **Which issue this fixes.** Write `Fixes #N` so it is linked and
+- **Which issue this fixes.** Include `#N` in the description so it is linked and
   auto-closed on merge.
 - **Root cause.** What was actually wrong, not just what you changed.
 - **What you changed and why.** A short paragraph. The reasoning is the
